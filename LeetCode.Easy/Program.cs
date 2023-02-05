@@ -1,2 +1,20 @@
-﻿// See https://aka.ms/new-console-template for more information
-Console.WriteLine("Hello, World!");
+﻿Console.WriteLine("Hello, World!");
+
+var leetCode = new LeetCode.Easy.LeetCode();
+leetCode.RomanToInt("I");
+leetCode.RomanToInt("II");
+leetCode.RomanToInt("III");
+leetCode.RomanToInt("IV");
+leetCode.RomanToInt("V");
+leetCode.RomanToInt("VI");
+leetCode.RomanToInt("VII");
+leetCode.RomanToInt("VIII");
+leetCode.RomanToInt("IX");
+leetCode.RomanToInt("X");
+leetCode.RomanToInt("L");
+leetCode.RomanToInt("C");
+leetCode.RomanToInt("D");
+leetCode.RomanToInt("M");
+leetCode.RomanToInt("III");
+leetCode.RomanToInt("LVIII");
+leetCode.RomanToInt("MCMXCIV");

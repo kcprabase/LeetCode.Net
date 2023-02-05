@@ -8,26 +8,39 @@ namespace LeetCode.Easy
 {
     internal class LeetCode
     {
-        internal void RomanToInt(string s) 
+        internal void RomanToInt(string s)
         {
             s = s.ToUpper();
             int len = s.Length;
             int num = 0;
-            while (len > 0)
+            int i = 0;
+            char prev = ' ';
+            while (i < len)
             {
-                char curr = s[len-1];
-                string str = curr.ToString();
-                if (curr == 'I') { 
-
+                char curr = s[i];
+                num += alphabetToInt(curr);
+                if (prev == 'I' && (curr == 'V' || curr == 'X'))
+                {
+                    num -= 2;
                 }
-                num = num + alphabetToInt(curr);
+                else if (prev == 'X' && (curr == 'L' || curr == 'C'))
+                {
+                    num -= 20;
+                }
+                else if (prev == 'C' && (curr == 'D' || curr == 'M'))
+                {
+                    num -= 200;
+                }
+                prev = curr;
+                i++;
             }
             Console.WriteLine(num);
         }
 
-        private int alphabetToInt(char s) 
+        private int alphabetToInt(char s)
         {
-            switch (s) {
+            switch (s)
+            {
                 case 'I': return 1;
                 case 'V': return 5;
                 case 'X': return 10;
@@ -35,8 +48,8 @@ namespace LeetCode.Easy
                 case 'C': return 100;
                 case 'D': return 500;
                 case 'M': return 1000;
+                default: throw new Exception("Invalid character");
             }
-            return 0;
         }
     }
 }
@@ -61,7 +74,7 @@ namespace LeetCode.Easy
 //C can be placed before D (500) and M(1000) to make 400 and 900.
 //Given a roman numeral, convert it to an integer.
 
- 
+
 
 //Example 1:
 
