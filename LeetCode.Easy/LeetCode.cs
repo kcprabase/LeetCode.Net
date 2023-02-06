@@ -8,6 +8,12 @@ namespace LeetCode.Easy
 {
     internal class LeetCode
     {
+
+        public string Multiply(string num1, string num2)
+        {
+            return "";
+        }
+
         internal void RomanToInt(string s)
         {
             s = s.ToUpper();
