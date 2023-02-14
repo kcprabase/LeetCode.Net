@@ -9,6 +9,46 @@ namespace LeetCode.Easy
     internal class LeetCode
     {
 
+        public int[] PlusOne(int[] digits)
+        {
+            int len = digits.Length;
+            int i = len - 1;
+            bool extend = false;
+            while (i >= 0)
+            {
+                digits[i] = digits[i] + 1;
+                if (digits[i] > 9)
+                {
+                    extend = true;
+                    digits[i] = 0;
+                    i--;
+                }
+                else
+                {
+                    extend = false;
+                    break;
+                }
+            }
+            if (extend)
+            {
+                int[] newDigits = new int[len + 1];
+                int n = 0;
+                newDigits[n] = 1;
+                n++;
+                foreach (int digit in digits)
+                {
+                    newDigits[n] = digit;
+                    n++;
+                }
+                return newDigits;
+            }
+            else
+            {
+                return digits;
+            }
+
+        }
+
         public string Multiply(string num1, string num2)
         {
             return "";
