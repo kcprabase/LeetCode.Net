@@ -9,6 +9,11 @@ namespace LeetCode.Easy
     internal class LeetCode
     {
 
+        public string AddBinary(string a, string b)
+        {
+            return "";
+        }
+
         public int[] PlusOne(int[] digits)
         {
             int len = digits.Length;
