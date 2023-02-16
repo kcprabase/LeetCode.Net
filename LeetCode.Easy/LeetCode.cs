@@ -16,42 +16,19 @@ namespace LeetCode.Easy
 
         public int[] PlusOne(int[] digits)
         {
-            int len = digits.Length;
-            int i = len - 1;
-            bool extend = false;
-            while (i >= 0)
+            for (int n = digits.Length - 1; n >= 0; n--)
             {
-                digits[i] = digits[i] + 1;
-                if (digits[i] > 9)
+                if (digits[n] < 9)
                 {
-                    extend = true;
-                    digits[i] = 0;
-                    i--;
+                    digits[n]++;
+                    return digits; 
                 }
-                else
-                {
-                    extend = false;
-                    break;
-                }
+                digits[n] = 0;
             }
-            if (extend)
-            {
-                int[] newDigits = new int[len + 1];
-                int n = 0;
-                newDigits[n] = 1;
-                n++;
-                foreach (int digit in digits)
-                {
-                    newDigits[n] = digit;
-                    n++;
-                }
-                return newDigits;
-            }
-            else
-            {
-                return digits;
-            }
-
+            digits = new int[digits.Length+1];
+            digits[0] = 1;
+            return digits;
+          
         }
 
         public string Multiply(string num1, string num2)

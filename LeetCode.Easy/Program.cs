@@ -2,7 +2,7 @@
 
 var leetCode = new LeetCode.Easy.LeetCode();
 
-int[] digits =  new int[] {9,9,9,9};
+int[] digits =  new int[] {9,0,9};
 digits = leetCode.PlusOne(digits);
 Console.WriteLine($"Digits plus one is {string.Join(',', digits)}");
 
