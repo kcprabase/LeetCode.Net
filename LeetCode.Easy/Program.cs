@@ -2,9 +2,16 @@
 
 var leetCode = new LeetCode.Easy.LeetCode();
 
-int[] digits =  new int[] {9,0,9};
-digits = leetCode.PlusOne(digits);
-Console.WriteLine($"Digits plus one is {string.Join(',', digits)}");
+string a = "10101010";
+string b = "11001100";
+//string a = "11";
+//string b = "1";
+string output = leetCode.AddBinary(a, b);
+Console.WriteLine($"Sum of binary {a} and {b} is : {output}");
+
+//int[] digits = new int[] { 9, 0, 9 };
+//digits = leetCode.PlusOne(digits);
+//Console.WriteLine($"Digits plus one is {string.Join(',', digits)}");
 
 //leetCode.RomanToInt("I");
 //leetCode.RomanToInt("II");

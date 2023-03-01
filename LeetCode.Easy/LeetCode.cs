@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,49 @@ namespace LeetCode.Easy
 
         public string AddBinary(string a, string b)
         {
-            return "";
+            string rem = "0";
+            string sum = "";
+            int aLen = a.Length;
+            int bLen = b.Length;
+            while (aLen > 0 || bLen > 0 || rem == "1") 
+            {
+                int ones = 0;
+                if (aLen > 0)
+                {
+                    if (a[aLen - 1] == '1')
+                        ones++;
+                    aLen--;
+                }
+                if (bLen > 0)
+                {
+                    if (b[bLen - 1] == '1')
+                        ones++;
+                    bLen--;
+                }
+                if (rem == "1")
+                    ones++;
+                if (ones == 0)
+                {
+                    sum = "0" + sum;
+                    rem = "0";
+                }
+                if (ones == 1)
+                {
+                    sum = "1" + sum;
+                    rem = "0";
+                }
+                else if (ones == 2)
+                {
+                    sum = "0" + sum;
+                    rem = "1";
+                }
+                else if (ones == 3)
+                {
+                    sum = "1" + sum;
+                    rem = "1";
+                }
+            }
+            return sum;
         }
 
         public int[] PlusOne(int[] digits)
