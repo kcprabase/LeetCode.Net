@@ -9,6 +9,10 @@ namespace LeetCode.Easy
 {
     internal class LeetCode
     {
+        public string AddString(string num1, string num2) 
+        {
+            return "";
+        }
 
         public string AddBinary(string a, string b)
         {
