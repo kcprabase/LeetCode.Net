@@ -11,7 +11,49 @@ namespace LeetCode.Easy
     {
         public string AddString(string num1, string num2) 
         {
-            return "";
+            int n = num1.Length;
+            int m = num2.Length;
+            int carry = 0;
+            string value = "";
+            var d = new Dictionary<string, int>();
+            for (int i = 0; i < 10; i++)
+            {
+                d.Add(i.ToString(), i);
+            }
+
+            while (n > 0 || m > 0)
+            {
+                int curVal = 0;
+                if (n > 0)
+                {
+                    curVal += d.GetValueOrDefault(num1[n - 1].ToString());
+                    n--;
+                }
+                if (m > 0)
+                {
+                    curVal += d.GetValueOrDefault(num2[m - 1].ToString());
+                    m--;
+                }
+                if (carry > 0)
+                {
+                    curVal += carry;
+                }
+                if (curVal > 9)
+                {
+                    curVal = curVal % 10;
+                    carry = 1;
+                }
+                else
+                {
+                    carry = 0;
+                }
+                value = curVal.ToString() + value;
+            }
+            if (carry > 0)
+            {
+                value = "1" + value;
+            }
+            return value;
         }
 
         public string AddBinary(string a, string b)

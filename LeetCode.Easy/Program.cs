@@ -2,12 +2,18 @@
 
 var leetCode = new LeetCode.Easy.LeetCode();
 
-string a = "10101010";
-string b = "11001100";
-//string a = "11";
-//string b = "1";
-string output = leetCode.AddBinary(a, b);
-Console.WriteLine($"Sum of binary {a} and {b} is : {output}");
+
+string a = "99";
+string b = "999";
+string output = leetCode.AddString(a, b);
+Console.WriteLine($"Sum of string nums {a} and {b} is : {output}");
+
+//string a = "10101010";
+//string b = "11001100";
+////string a = "11";
+////string b = "1";
+//string output = leetCode.AddBinary(a, b);
+//Console.WriteLine($"Sum of binary {a} and {b} is : {output}");
 
 //int[] digits = new int[] { 9, 0, 9 };
 //digits = leetCode.PlusOne(digits);
