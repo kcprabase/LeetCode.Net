@@ -3,10 +3,19 @@
 var leetCode = new LeetCode.Easy.LeetCode();
 
 
-string a = "99";
-string b = "999";
-string output = leetCode.AddString(a, b);
-Console.WriteLine($"Sum of string nums {a} and {b} is : {output}");
+int[] a = new int[] { 1, 2, 0, 0 };
+int b = 34;
+var output = leetCode.AddToArrayForm(a, b);
+Console.WriteLine($"Sum of array form nums is: ");
+foreach (int i in output)
+{
+    Console.Write(i);
+}
+
+//string a = "99";
+//string b = "999";
+//string output = leetCode.AddString(a, b);
+//Console.WriteLine($"Sum of string nums {a} and {b} is : {output}");
 
 //string a = "10101010";
 //string b = "11001100";

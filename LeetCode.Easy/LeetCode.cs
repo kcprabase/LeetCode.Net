@@ -9,6 +9,55 @@ namespace LeetCode.Easy
 {
     internal class LeetCode
     {
+        public IList<int> AddToArrayForm(int[] num, int k)
+        {
+            var list = new List<int>();
+            int[] num2 = new int[k.ToString().Length];
+            int n = num.Length;
+            int m = num2.Length;
+            int carry = 0;
+            int num2Index = num2.Length - 1;
+            while (k > 0) {
+                num2[num2Index] = k % 10;
+                k = k / 10;
+                num2Index--;
+            }
+
+            while (n > 0 || m > 0)
+            {
+                int curVal = 0;
+                if (n > 0)
+                {
+                    curVal += num[n-1];
+                    n--;
+                }
+                if (m > 0)
+                {
+                    curVal += num2[m-1];
+                    m--;
+                }
+                if (carry > 0)
+                {
+                    curVal += carry;
+                    carry = 0;
+                }
+                if (curVal > 9)
+                {
+                    curVal = curVal % 10;
+                    carry = 1;
+                }
+                list.Add(curVal);
+            }
+
+            if (carry > 0)
+            {
+                list.Add(carry);
+            }
+
+            list.Reverse();
+            return list;
+        }
+
         public string AddString(string num1, string num2) 
         {
             int n = num1.Length;
